@@ -7,16 +7,17 @@ namespace Lesson8
         static void Main(string[] args)
         {
             //Pt2();
-            while (true)
-            {
-                Console.WriteLine("Please ente a num ");
-                int.TryParse(Console.ReadLine(), out int number5);
-                Console.WriteLine(IsPrimeI(number5) == 1);
+            //while (true)
+            //{
+            //    Console.WriteLine("Please ente a num ");
+            //    int.TryParse(Console.ReadLine(), out int number5);
+            //    Console.WriteLine(IsPrimeI(number5) == 1);
 
-            }
+            //}
 
-            Pt3A();
-            Pt4A();
+            //Pt3A();
+            //Pt4A();
+            Pt5();
 
 
             //int[,] arr = { { 1, 2, 3 }, { 4, 5, 6 } };
@@ -36,6 +37,18 @@ namespace Lesson8
             //}
         }
 
+         static void Pt5()
+        {
+            int[]arr3 = { 2, 17, 13, 9, 4, };
+            CheckArrayForPrimeNumbers(arr3);
+        }
+         static void CheckArrayForPrimeNumbers(int[] arr)
+        {
+            foreach (var item in arr)
+            {
+                Console.WriteLine($"is number prime? {item} {IsPrimeI(item) == 1}");
+            }
+        }
         private static void Pt4A()
         {
             Console.WriteLine("________________TR4________________");
