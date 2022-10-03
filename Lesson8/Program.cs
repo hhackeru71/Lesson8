@@ -6,10 +6,7 @@ namespace Lesson8
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Please enter a number until which to print:");
-            int.TryParse(Console.ReadLine(), out int until);
-            bool inRange1to10 = PrintNumbers(until);
-            Console.WriteLine($"{until} is in range 1-10: {inRange1to10}");
+            Pt2();
 
             //int[,] arr = { { 1, 2, 3 }, { 4, 5, 6 } };
             ////foreach(int index in arr)
@@ -28,7 +25,14 @@ namespace Lesson8
             //}
         }
 
-        static bool PrintNumbers(int until)
+        static void Pt2()
+        {
+            Console.WriteLine("enter a number");
+            int.TryParse(Console.ReadLine(), out int number);
+            Console.WriteLine($"number between 1 -10 {PrintNumber1to10(number)}");
+        }
+
+        static bool PrintNumber1to10(int until)
         {
             for (int i = 1; i <= until; i++)
             {
