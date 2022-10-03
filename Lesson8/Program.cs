@@ -11,7 +11,7 @@ namespace Lesson8
             {
                 Console.WriteLine("Please ente a num ");
                 int.TryParse(Console.ReadLine(), out int number5);
-                Console.WriteLine(IsPrime(number5));
+                Console.WriteLine(IsPrimeI(number5) == 1);
 
             }
 
@@ -92,6 +92,22 @@ namespace Lesson8
 
             return (until >= 1) && (until <= 10);
         }
+        static int IsPrimeI(int number)
+        {
+            if (number < 2)
+                return 0;
+
+            for (int i = 2; i < number; i++)
+            {
+                if (number % i == 0)
+                {
+                    return 0;//מספר לא ראשוני
+                }
+            }
+
+            return 1;//מספר ראשוני
+        }
+
 
     }
 }
