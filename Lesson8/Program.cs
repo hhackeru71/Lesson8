@@ -16,7 +16,7 @@ namespace Lesson8
             }
 
             Pt3A();
-
+            Pt4A();
 
 
             //int[,] arr = { { 1, 2, 3 }, { 4, 5, 6 } };
@@ -36,6 +36,42 @@ namespace Lesson8
             //}
         }
 
+        private static void Pt4A()
+        {
+            Console.WriteLine("________________TR4________________");
+            int[] arr = { 1, 2, 3, 11, 5, 6, 7, 8, 9, 10 };
+            CheckAarrayForPrimeNumbers(arr);
+            Console.WriteLine("________________TR4________________");
+        }
+        static void CheckAarrayForPrimeNumbers(int[] arr)
+        {
+            int arrayLength = arr.Length - 1;
+            int arrayPosition = arr[0];
+            int i = 0;
+            while (arrayLength >= 0)
+            {
+                int numCalc = arr[i];
+                int devisors = 0;
+                for (int j = 1; j <= arrayPosition; j++)
+                {
+                    if (arrayPosition % j == 0)
+                    {
+                        devisors++;
+                    }
+                }
+                if (devisors == 2)
+                {
+                    Console.WriteLine($"{numCalc} is a prime number");
+                }
+                else
+                {
+                    Console.WriteLine($"{numCalc} is not a prime number");
+                }
+                arrayPosition++;
+                arrayLength--;
+                i++;
+            }
+        }
         static void Pt3A()
         {
             Console.WriteLine("________________TR3 sol 2________________");
