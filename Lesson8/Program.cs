@@ -7,9 +7,12 @@ namespace Lesson8
         static void Main(string[] args)
         {
 
-            Pt6();
-            Pt6A();
-            Pt6M();
+            //Pt6();
+            //Pt6A();
+            //Pt6M();
+            Pt7E();
+            Pt7M();
+            Pt7I();
             //Pt2();
             //while (true)
             //{
@@ -41,7 +44,87 @@ namespace Lesson8
             //}
         }
 
-         static void Pt6M()
+        static void Pt7I()
+        {
+            int[] intArray = { 2, 9, 4, 3, 5, 1, 7 };
+            for (int i = 0; i < intArray.Length - 1; i++)
+            {
+                int indexOfMinFromI = i;
+
+                for (int j = i + 1; j < intArray.Length; j++)
+                {
+                    if (intArray[j] < intArray[indexOfMinFromI])
+                    {
+                        indexOfMinFromI = j;
+                    }
+                }
+
+                (intArray[i], intArray[indexOfMinFromI]) =
+                (intArray[indexOfMinFromI], intArray[i]);
+            }
+
+        }
+
+        static void Pt7M()
+        {
+            int[] intArray = { 2, 9, 4, 3, 5, 1, 7 };
+            int temp;
+
+            for (int i = 1; i <= intArray.Length - 1; i++)
+            {
+                for (int j = 0; j < intArray.Length - i; j++)
+                {
+                    if (intArray[j] > intArray[j + 1])
+                    {
+                        temp = intArray[j];
+                        intArray[j] = intArray[j + 1];
+                        intArray[j + 1] = temp;
+                    }
+                }
+            }
+            Console.WriteLine("print the array in ascending order:");
+            foreach (int num in intArray)
+                Console.Write($"{num}\t");
+
+            Console.WriteLine("\n");
+            Console.WriteLine("print the array in descending order:");
+            for (int i = intArray.Length - 1; i >= 0; i--)
+                Console.Write($"{intArray[i]}\t");
+
+        }
+
+        static void Pt7E()
+        {
+            int[] intArray = { 2, 9, 4, 3, 5, 1, 7 };
+            int temp;
+            for (int i = 0; i < intArray.Length; i++)
+            {
+                for (int j = 0; j < intArray.Length - 1; j++)
+                    if (intArray[j] > intArray[j + 1])
+                    {
+                        temp = intArray[j];
+                        intArray[j] = intArray[j + 1];
+                        intArray[(j + 1)] = temp;
+                    }
+            }
+
+            Console.WriteLine("The ascending array is: (min to max");
+            for (int i = 0; i < intArray.Length; i++)
+            {
+                Console.WriteLine(intArray[i]);
+            }
+
+            Console.WriteLine("========================================");
+
+            Console.WriteLine("The ascending array is: (max to min");
+            for (int i = intArray.Length - 1; i >= 0; i--)
+            {
+                Console.WriteLine(intArray[i]);
+            }
+
+        }
+
+        static void Pt6M()
         {
             int n, m;
             Console.WriteLine("Enter two numbers->");
